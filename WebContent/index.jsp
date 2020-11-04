@@ -17,6 +17,7 @@ body {
 			<a href="welcome.html">Click here to See Welcome Message... </a>(to
 			check Spring MVC Controller... @RequestMapping("/welcome"))
 		</h3>
+		<a href="register.html">Click here to register an account</a>
 	</div>
 </body>
 </html>
