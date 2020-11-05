@@ -18,6 +18,7 @@ body {
 			check Spring MVC Controller... @RequestMapping("/welcome"))
 		</h3>
 		<a href="register.html">Click here to register an account</a>
+		<a href="customerManagement.html">Click here to view all user accounts</a>
 	</div>
 </body>
 </html>

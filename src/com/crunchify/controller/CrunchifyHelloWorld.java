@@ -26,4 +26,10 @@ public class CrunchifyHelloWorld {
 	
 		return new ModelAndView("register");
 	}
+	
+	@RequestMapping("/customerManagement")
+	public ModelAndView users() {
+	
+		return new ModelAndView("customerManagement");
+	}
 }

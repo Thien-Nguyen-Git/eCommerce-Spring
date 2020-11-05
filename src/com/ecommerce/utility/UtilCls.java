@@ -3,7 +3,13 @@ package com.ecommerce.utility;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ecommerce.model.User;
 
 public class UtilCls {
 	//connect to db
@@ -50,5 +56,38 @@ public class UtilCls {
 		
 		public void test(String s) {
 			System.out.println(s);
+		}
+		
+		public List<User> retLogins(){
+			List<User> lp = new ArrayList<User>();
+			String query ="select* from user";
+			Statement st;
+			
+			try {
+				st=conn.createStatement();
+				ResultSet rs = st.executeQuery(query);
+				while(rs.next()) {
+					User u = new User();
+					u.setUid(rs.getInt(1));
+					u.setName(rs.getString(2));
+					u.setEmail(rs.getString(3));
+					u.setPhone(rs.getString(4));
+					u.setUsername(rs.getString(5));
+					u.setPassword(rs.getString(6));
+					u.setRole(rs.getString(7));
+					u.setStreet_name(rs.getString(8));
+					u.setApt(rs.getString(9));
+					u.setCity(rs.getString(10));
+					u.setState(rs.getString(11));
+					u.setZip(rs.getString(12));
+					lp.add(u);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return lp;
+			
 		}
 }
