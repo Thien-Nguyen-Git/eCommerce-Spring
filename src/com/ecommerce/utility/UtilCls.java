@@ -11,7 +11,7 @@ public class UtilCls {
 		static {
 			try {
 				DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-				conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/teamecommercedb", "root", "root");
+				conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/teamecommercedb", "root", "TakeoRyuuken0!");
 			} 
 			catch (SQLException e) {
 				e.printStackTrace();
