@@ -50,8 +50,16 @@ public class UtilCls {
 			}
 		}
 		
-		public void delete() {
-			System.out.println("clicked");
+		public void delete(String id) {
+			String query="delete from user where uid='"+Integer.parseInt(id)+"';";
+			PreparedStatement ps;
+			try {
+				ps = conn.prepareStatement(query);
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 		}
 		
 		public void test(String s) {
@@ -88,6 +96,67 @@ public class UtilCls {
 			}
 			
 			return lp;
+			
+		}
+		
+		public User returnUser(int id){
+			String query ="select * from user where uid = "+id;
+			Statement st;
+			
+			try {
+				st=conn.createStatement();
+				ResultSet rs = st.executeQuery(query);
+				while(rs.next()) {
+					User u = new User();
+					u.setUid(rs.getInt(1));
+					u.setName(rs.getString(2));
+					u.setEmail(rs.getString(3));
+					u.setPhone(rs.getString(4));
+					u.setUsername(rs.getString(5));
+					u.setPassword(rs.getString(6));
+					u.setRole(rs.getString(7));
+					u.setStreet_name(rs.getString(8));
+					u.setApt(rs.getString(9));
+					u.setCity(rs.getString(10));
+					u.setState(rs.getString(11));
+					u.setZip(rs.getString(12));
+					return u;
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return null;
+			
+			
+		}
+		
+		public boolean updateUser(String a, String b, String c, String d, String e, String f, String g, String h, String i, String j, String k, int l) {
+			String  query= "update user set name =?, phone =?, username=?, password =?, role=?, street_name=?, apt=?, city=?, state=?, zip=? where uid=?";
+			
+			try {
+				PreparedStatement ps =conn.prepareStatement(query);
+				ps.setString(1, a);
+			//	ps.setString(2, b);
+				ps.setString(2, c);
+				ps.setString(3, d);
+				ps.setString(4, e);
+				ps.setString(5, k);
+				ps.setString(6, f);
+				ps.setString(7, g);
+				ps.setString(8, h);
+				ps.setString(9, i);
+				ps.setString(10, j);
+				ps.setInt(11, l);
+				ps.executeUpdate();
+				return true;
+				
+			} catch (SQLException z) {
+				// TODO Auto-generated catch block
+				z.printStackTrace();
+			}
+			return false;
+			
 			
 		}
 }

@@ -1,1 +1,3 @@
-com\crunchify\controller\CrunchifyHelloWorld.class
+com\ecommerce\controller\AdminController.class
+com\ecommerce\model\User.class
+com\ecommerce\utility\UtilCls.class

@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Spring MVC Tutorial Series by Crunchify.com</title>
+<title>Ecommerce Team Project</title>
 <style type="text/css">
 body {
 	background-image: url('https://cdn.crunchify.com/bg.png');
@@ -11,14 +11,14 @@ body {
 	<br>
 	<div style="text-align: center">
 		<h2>
-			Hey You..!! This is your 1st Spring MCV Tutorial..<br> <br>
+			Ecommerce Team Project<br> <br>
 		</h2>
 		<h3>
-			<a href="welcome.html">Click here to See Welcome Message... </a>(to
-			check Spring MVC Controller... @RequestMapping("/welcome"))
+			<a href="welcome.html">Click here to See Welcome Page </a>
 		</h3>
 		<a href="register.html">Click here to register an account</a>
-		<a href="customerManagement.html">Click here to view all user accounts</a>
+		<br>
+		<a href="customerManagement.html">Click here to view all user accounts + update/delete them</a>
 	</div>
 </body>
 </html>

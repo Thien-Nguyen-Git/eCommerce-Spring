@@ -82,7 +82,7 @@
 					<br> <input class="btn btn-success" type="submit"
 						value="Register">
 				</form>
-				<br> <a class="btn btn-primary text-center" href="Home.jsp">Back</a>
+				<br> <a class="btn btn-primary text-center" href="index.jsp">Back</a>
 			</div>
 			<div class="col-sm">Hi</div>
 		</div>
