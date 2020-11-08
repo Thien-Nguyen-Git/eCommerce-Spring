@@ -6,15 +6,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Update User</title>
 </head>
 <body>
 Update User Information:
 <%
 UtilCls util = new UtilCls();
-System.out.println(session.getAttribute("idToChange"));
+//System.out.println(session.getAttribute("idToChange"));
 int x = (int)session.getAttribute("idToChange");
-System.out.println(util.returnUser(x));
+//System.out.println(util.returnUser(x));
 User u = util.returnUser(x);
 
 %>
@@ -68,7 +68,7 @@ User u = util.returnUser(x);
 						}
 					}*/
 					
-					if (request.getParameter("update") != null) {
+					if (request.getParameter("user") != null) {
 						String a, b, c, d, e, f,g,h,i,j,k, l;
 						a = request.getParameter("name");
 						b = request.getParameter("email");
@@ -82,13 +82,24 @@ User u = util.returnUser(x);
 						j = request.getParameter("zip");
 						k = request.getParameter("role");
 						//l = request.getParameter("id");
-						if(util.updateUser(a, b, c, d, e,f,g,h,i,j,k,x)){
-							// String redirectURL = "http://localhost:8080/EcommerceTeamProject/updateCustomer.html";
-							//CrunchifySpringMVCTutorial
-							String redirectURL = "http://localhost:8080/EcommerceTeamProject/customerManagement.html";
-							 response.sendRedirect(redirectURL);	
-							
+						if(util.checkRole(k)){
+							if(util.checkZip(j)){
+								if(util.updateUser(a, b, c, d, e,f,g,h,i,j,k,x)){
+									// String redirectURL = "http://localhost:8080/EcommerceTeamProject/updateCustomer.html";
+									//CrunchifySpringMVCTutorial
+									String redirectURL = "http://localhost:8080/EcommerceTeamProject/customerManagement.html";
+									 response.sendRedirect(redirectURL);	
+									
+								}
+							}
+							else {
+								out.println("<p style='color: red'>Zip code must be a number!</p>");
+									}
+						
 						}
+						else {
+							out.println("<p style='color: red'>Role must be either admin or user!</p>");
+								}
 
 						
 					}
@@ -97,5 +108,6 @@ User u = util.returnUser(x);
 					<br> <input name="update" type="submit"
 						value="Update">
 </form>
+<br> <a class="btn btn-primary text-center" href="customerManagement.html">Back</a>
 </body>
 </html>

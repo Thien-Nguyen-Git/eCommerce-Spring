@@ -34,4 +34,10 @@ public class AdminController {
 	
 		return new ModelAndView("updateCustomer");
 	}
+	
+	@RequestMapping("/adminAddUser")
+	public ModelAndView addViaAdmin() {
+	
+		return new ModelAndView("adminAddUser");
+	}
 }

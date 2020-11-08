@@ -31,7 +31,7 @@
 					<br><br> 
 					<label for="email">Email:</label> 
 					<br>
-					<input type="text" id="email" name="email" required>
+					<input type="email" id="email" name="email" required>
 					<br><br> 
 					<label for="phone">Phone Number:</label>
 					<br> 
@@ -41,7 +41,7 @@
 					<input type="text" id="user" name="user" required><br>
 					<br>
 					<label for="password">Password:</label> <br>
-					<input type="text" id="password" name="password" required><br>
+					<input type="password" id="password" name="password" required><br>
 					<br>
 					<!-- role is set in backend -->
 					  <label for="street">Street Name:</label> <br>
@@ -53,11 +53,12 @@
 					<label for="state">State:</label> <br>
 					<input type="text" id="state" name="state" required><br> <br>
 					<label for="zip">Zip Code:</label> <br>
-					<input type="text" id="zip" name="zip" required><br> <br>
+					<input type="number" id="zip" name="zip" required><br> <br>
 					<%
 						UtilCls util = new UtilCls();
-					if (request.getParameter("user") != null) {
-						String a, b, c, d, e, f,g,h,i,j,k;
+					if (request.getParameter("register") != null) {
+						String a, b, c, d, e, f,g,h,i;
+						int j;
 						a = request.getParameter("name");
 						b = request.getParameter("email");
 						c = request.getParameter("phone");
@@ -67,7 +68,7 @@
 						g = request.getParameter("apt");
 						h = request.getParameter("city");
 						i = request.getParameter("state");
-						j = request.getParameter("zip");
+						j = Integer.parseInt(request.getParameter("zip"));
 
 						if(util.registerUser(a, b, c, d, e,f,g,h,i,j)){
 							out.println("<p style='color: green'>Thank you for creating an account!");
@@ -79,7 +80,7 @@
 						
 					}
 					%>
-					<br> <input class="btn btn-success" type="submit"
+					<br> <input class="btn btn-success" name = "register" type="submit"
 						value="Register">
 				</form>
 				<br> <a class="btn btn-primary text-center" href="index.jsp">Back</a>

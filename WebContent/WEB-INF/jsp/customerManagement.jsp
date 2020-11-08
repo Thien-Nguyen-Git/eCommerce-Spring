@@ -11,7 +11,7 @@ UtilCls util = new UtilCls();
 %>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Customer Management</title>
 </head>
 <body>
 <form method="post" >
@@ -55,5 +55,7 @@ UtilCls util = new UtilCls();
 		%>
 </table>
 </form>
+
+<br> <a href="adminAddUser.html"><button>Add User</button></a>
 </body>
 </html>

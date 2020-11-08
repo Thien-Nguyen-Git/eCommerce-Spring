@@ -26,7 +26,7 @@ public class UtilCls {
 		
 		
 		//add new user to db
-		public boolean registerUser(String a, String b, String c, String d, String e, String f, String g, String h, String i, String j) {
+		public boolean registerUser(String a, String b, String c, String d, String e, String f, String g, String h, String i, int j) {
 			String query="insert into user values(null,?,?,?,?,?,?,?,?,?,?,?)";
 			try {
 				PreparedStatement ps = conn.prepareStatement(query);
@@ -35,12 +35,12 @@ public class UtilCls {
 				ps.setString(3, c);
 				ps.setString(4, d);
 				ps.setString(5, e);
-				ps.setString(6, "role");
+				ps.setString(6, "user");
 				ps.setString(7, f);
 				ps.setString(8, g);
 				ps.setString(9, h);
 				ps.setString(10, i);
-				ps.setString(11, j);
+				ps.setInt(11, j);
 				ps.execute();
 				return true;
 			} catch (SQLException e1) {
@@ -87,7 +87,7 @@ public class UtilCls {
 					u.setApt(rs.getString(9));
 					u.setCity(rs.getString(10));
 					u.setState(rs.getString(11));
-					u.setZip(rs.getString(12));
+					u.setZip(rs.getInt(12));
 					lp.add(u);
 				}
 			} catch (SQLException e) {
@@ -119,7 +119,7 @@ public class UtilCls {
 					u.setApt(rs.getString(9));
 					u.setCity(rs.getString(10));
 					u.setState(rs.getString(11));
-					u.setZip(rs.getString(12));
+					u.setZip(rs.getInt(12));
 					return u;
 				}
 			} catch (SQLException e) {
@@ -146,7 +146,7 @@ public class UtilCls {
 				ps.setString(7, g);
 				ps.setString(8, h);
 				ps.setString(9, i);
-				ps.setString(10, j);
+				ps.setInt(10, Integer.parseInt(j));
 				ps.setInt(11, l);
 				ps.executeUpdate();
 				return true;
@@ -158,5 +158,44 @@ public class UtilCls {
 			return false;
 			
 			
+		}
+		
+		public boolean checkRole(String s) {
+			String lowerS = s.toLowerCase();
+			if(lowerS.equals("user")||lowerS.equals("admin")) {
+				return true;
+			}
+			return false;
+		}
+		
+		public boolean checkZip(String s) {
+			try {
+			
+			int zip = Integer.parseInt(s);
+			return true;
+			}
+			catch
+			(Exception e) {
+				return false;
+			}
+		
+		}
+		
+		public boolean adminRegisterUser(String a, String b, String c, String d, String e) {
+			String query="insert into user(name, email, username, password, role) values(?,?,?,?,?)";
+			try {
+				PreparedStatement ps = conn.prepareStatement(query);
+				ps.setString(1, a);
+				ps.setString(2, b);
+				ps.setString(3, c);
+				ps.setString(4, d);
+				ps.setString(5, e);
+				ps.execute();
+				return true;
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				return false;
+			}
 		}
 }

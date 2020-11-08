@@ -12,7 +12,7 @@ public class User {
 	private String apt;
 	private String city;
 	private String state;
-	private String zip;
+	private int zip;
 	
 	public User() {
 		super();
@@ -22,7 +22,7 @@ public class User {
 	
 
 	public User(int uid, String name, String email, String phone, String username, String password, String role,
-			String street_name, String apt, String city, String state, String zip) {
+			String street_name, String apt, String city, String state, int zip) {
 		super();
 		this.uid = uid;
 		this.name = name;
@@ -112,11 +112,11 @@ public class User {
 		this.city = city;
 	}
 
-	public String getZip() {
+	public int getZip() {
 		return zip;
 	}
 
-	public void setZip(String zip) {
+	public void setZip(int zip) {
 		this.zip = zip;
 	}
 	
