@@ -8,10 +8,7 @@
 </head>
 <body>
 	${message}
-<<<<<<< HEAD
-=======
 	<br>
 	<a href="customerManagement">Customer Management</a>
->>>>>>> jabid-branch2
 </body>
 </html>
