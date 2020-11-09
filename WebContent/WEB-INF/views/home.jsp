@@ -8,6 +8,7 @@
 </head>
 <body>
 	${message}
-	<a href="customerManagement">Hello</a>
+	<br>
+	<a href="customerManagement">Customer Management</a>
 </body>
 </html>

@@ -55,6 +55,6 @@
 						value="Add User">
 				</form>
 				
-				<br> <a class="btn btn-primary text-center" href="customerManagement.html">Back</a>
+				<br> <a href="customerManagement">Back</a>
 </body>
 </html>
