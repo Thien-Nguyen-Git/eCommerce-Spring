@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
         
     <wb-module deploy-name="eCommerceProject-0.0.1-SNAPSHOT">
                 
+=======
+    <wb-module deploy-name="eCommerceProject-0.0.1-SNAPSHOT">
+>>>>>>> jabid-branch2
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
                 
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+<<<<<<< HEAD
                 
         <property name="context-root" value="eCommerceProject"/>
                 
         <property name="java-output-path" value="/eCommerce-Spring/target/classes"/>
             
+=======
+        <property name="context-root" value="eCommerceProject"/>
+        <property name="java-output-path" value="/eCommerce-Spring/target/classes"/>
+>>>>>>> jabid-branch2
     </wb-module>
     
 </project-modules>

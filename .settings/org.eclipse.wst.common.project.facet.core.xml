@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-  <fixed facet="jst.web"/>
   <fixed facet="wst.jsdt.web"/>
+<<<<<<< HEAD
   <fixed facet="java"/>
+=======
+  <installed facet="java" version="13"/>
+  <installed facet="jst.web" version="4.0"/>
+>>>>>>> jabid-branch2
   <installed facet="wst.jsdt.web" version="1.0"/>
   <installed facet="jst.web" version="4.0"/>
   <installed facet="java" version="13"/>
