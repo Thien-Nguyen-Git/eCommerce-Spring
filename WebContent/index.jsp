@@ -37,8 +37,8 @@
 	<body>
 		<div class="topnav">
 		  <a class="active" href="#home">Home</a>
-		  <a href="#news">News</a>
-		  <a href="#contact">Contact</a>
+		  <a href="welcome.html">Welcome</a>
+		  <a href="register.html">Register</a>
 		  <a href="#about">About</a>
 		</div>
 		<br>

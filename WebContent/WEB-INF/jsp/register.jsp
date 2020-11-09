@@ -9,11 +9,44 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous">
+	</script>
 <title>Register</title>
+
+	<style type="text/css">
+			
+		/* Add a black background color to the top navigation */
+		.topnav {
+			background-color: #333;
+			overflow: hidden;
+		}
+			
+		/* Style the links inside the navigation bar */
+		.topnav a {
+			float: left;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+			
+		/* Change the color of links on hover */
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+			
+		/* Add a color to the active/current link */
+		.topnav a.active {
+			background-color: #4CAF50;
+			color: white;
+		}
+	</style>
+		
 </head>
 <body>
 	<div class="jumbotron bg-dark">
