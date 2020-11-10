@@ -14,6 +14,8 @@ UtilCls util = new UtilCls();
 <title>Customer Management</title>
 </head>
 <body>
+<h1>Customer Management Page</h1>
+<p>This is the customer management page</p>
 <form method="post" >
 <table border=1>
 <tr><th>Name</th><th>Email</th><th>Phone</th><th>Username</th><th>Edit</th><th>Delete</th></tr>

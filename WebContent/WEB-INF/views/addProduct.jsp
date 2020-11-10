@@ -21,6 +21,12 @@
 					<br>
 					<input type="text" id="desc" name="desc" required>
 					<br><br> 
+					
+					<label for="category">Category:</label> 
+					<br>
+					<input type="text" id="category" name="category" required>
+					<br><br> 
+					
 					<label for="price">Price:</label> <br>
 					<input type="number" id="price" name="price" step=".01" required><br> <br>
 					<label for="amt">Stock Amt:</label> <br>

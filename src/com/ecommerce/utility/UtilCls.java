@@ -7,8 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
+import com.ecommerce.models.Product;
 import com.ecommerce.models.User;
 
 public class UtilCls {
@@ -197,5 +199,35 @@ public class UtilCls {
 					e1.printStackTrace();
 					return false;
 				}
+			}
+			
+			public List<Product> retProducts(){
+				List<Product> prodList = new ArrayList<Product>();
+				String query ="select * from product";
+				Statement st;
+				
+				try {
+					st=conn.createStatement();
+					ResultSet rs = st.executeQuery(query);
+					while(rs.next()) {
+						Product p = new Product();
+						p.setPid(rs.getInt(1));
+						p.setProduct_name(rs.getString(2));
+						p.setDescription(rs.getString(3));
+						p.setCategory(rs.getString(4));
+						p.setPrice(rs.getDouble(5));
+						p.setStock_amt(rs.getInt(6));
+						byte[] temp = rs.getBytes("picture");
+						String encode = Base64.getEncoder().encodeToString(temp);
+						p.setPicture(encode);
+						prodList.add(p);
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				return prodList;
+				
 			}
 }

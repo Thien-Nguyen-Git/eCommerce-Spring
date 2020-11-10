@@ -1,3 +1,6 @@
+<%@page import="com.ecommerce.models.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ecommerce.utility.UtilCls"%>
 <%@page import="java.util.Base64"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.io.FileOutputStream"%>
@@ -31,45 +34,32 @@ td {
 </style>
 </head>
 <body>
+
 <table BORDER="1">
     <TR>
-
+    
     <TH>Product Id</TH>
     <TH>Product Name</TH>
     <TH>Description</TH>
      <TH>Price</TH>
-      <TH>Picture</TH>
+  <TH>Picture</TH>
     </TR>
     
    
 <%
-DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/teamecommercedb", "root", "root");
+UtilCls util = new UtilCls();
+List<Product> prodList =  util.retProducts();
 
-String sql = "Select * from product";
-
-Statement st=conn.createStatement();
-ResultSet rs = st.executeQuery(sql);
-
-while(rs.next()) {
-	out.println(" <tr>   <td>"+rs.getInt(1)+"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"<td>temp price</td><td>");
-	//out.println("<div>"+rs.getInt(1)+ " "+rs.getString(2)+ " "+rs.getString(3)+" "+rs.getBlob(6)+" </div>");
-	//Blob blob = rs.getBlob(6);
-	//byte[] byteArray = blob.getBytes(1,(int)blob.length());
-	byte[] temp = rs.getBytes("picture");
-	String encode = Base64.getEncoder().encodeToString(temp);
-	request.setAttribute("imgBase", encode);
-	//response.setContentType("image/jpg");
-	//OutputStream o = response.getOutputStream();
-	//out.println(" <img src=\"data:image/jpg;base64,"+encode +"}\" />");
+for (int i=0;i<prodList.size();i++) {
+	out.println(" <tr>   <td>"+prodList.get(i).getPid()+"</td><td>"+prodList.get(i).getProduct_name()+"</td><td>"+prodList.get(i).getDescription()+"<td>"+prodList.get(i).getPrice()+"</td><td>");
 	
 %>
-  <img width="200" height="200" src="data:image/jpeg;base64,<%= encode %>" />
+  <img width="200" height="200" src="data:image/jpeg;base64,<%= prodList.get(i).getPicture() %>" />
   </td>
   </tr>
 
- <!--  <img src="data:image/png;base64,<%= encode %>" /> -->
   <%} %>
     </table>
+
 </body>
 </html>

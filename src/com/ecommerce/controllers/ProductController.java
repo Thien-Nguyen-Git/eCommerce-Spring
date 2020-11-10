@@ -13,7 +13,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/addProduct")
-	public ModelAndView users() {
+	public ModelAndView addProd() {
 	
 		return new ModelAndView("addProduct");
 	}

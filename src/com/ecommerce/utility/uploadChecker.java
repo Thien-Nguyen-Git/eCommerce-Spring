@@ -61,22 +61,23 @@ public class uploadChecker extends HttpServlet {
 	            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/teamecommercedb", "root", "root");
 	 
 	            // constructs SQL statement
-	            String sql = "INSERT INTO product (name, description,price, stock_amt,picture) values (?, ?, ?, ?, ?)";
+	            String sql = "INSERT INTO product (product_name, description,category, price, stock_amt,picture) values (?, ?, ?, ?, ?,?)";
 	            PreparedStatement statement = conn.prepareStatement(sql);
 	            statement.setString(1, request.getParameter("name"));
 	            statement.setString(2, request.getParameter("desc"));
-	            statement.setDouble(3, Double.parseDouble(request.getParameter("price")));
-	            statement.setInt(4, Integer.parseInt(request.getParameter("amt")));
+	            statement.setString(3, request.getParameter("category"));
+	            statement.setDouble(4, Double.parseDouble(request.getParameter("price")));
+	            statement.setInt(5, Integer.parseInt(request.getParameter("amt")));
 	            if (inputStream != null) {
 	                // fetches input stream of the upload file for the blob column
-	                statement.setBlob(5, inputStream);
+	                statement.setBlob(6, inputStream);
 	            }
 	 
 	            // sends the statement to the database server
 	            int row = statement.executeUpdate();
 	            if (row > 0) {
 	            	//out.println("<p style='color: green'>File uploaded and saved into database");
-	                message = "File uploaded and saved into database";
+	                message = "Image saved into database";
 	            }
 	        } catch (SQLException ex) {
 	            message = "ERROR: " + ex.getMessage();
