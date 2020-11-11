@@ -12,13 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  
 @Controller
 public class CrunchifyHelloWorld {
-	
-	@RequestMapping("/home")
-	public ModelAndView home() {
-	
-		return new ModelAndView("home");
-	}
-	
+ 
 	@RequestMapping("/welcome")
 	public ModelAndView helloWorld() {
  
@@ -27,33 +21,9 @@ public class CrunchifyHelloWorld {
 		return new ModelAndView("welcome", "message", message);
 	}
 	
-	@RequestMapping("/product")
-	public ModelAndView product() {
-	
-		return new ModelAndView("product");
-	}
-	
-	@RequestMapping("/add_product")
-	public ModelAndView add_product() {
-	
-		return new ModelAndView("add_product");
-	}
-	
 	@RequestMapping("/register")
 	public ModelAndView register() {
 	
 		return new ModelAndView("register");
-	}
-	
-	@RequestMapping("/cart")
-	public ModelAndView cart() {
-	
-		return new ModelAndView("cart");
-	}
-	
-	@RequestMapping("/admin")
-	public ModelAndView admin() {
-	
-		return new ModelAndView("admin");
 	}
 }
