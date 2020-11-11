@@ -38,9 +38,23 @@ public class LoginController {
 		String name = userDao.loginUser(user);
 
 		if (name != null) {
-
-			redirAtt.addFlashAttribute("message", "Welcome " + name);
-			mv.setViewName("redirect:/home");
+			
+			String role = userDao.getUserRole(user);
+			
+			if (role.equals("admin")) {
+				
+				redirAtt.addFlashAttribute("message", "Welcome " + name);
+				mv.setViewName("redirect:/admin");
+				
+			}else if (role.equals("user")) {
+				
+				redirAtt.addFlashAttribute("message", "Welcome " + name);
+				mv.setViewName("redirect:/home");
+				
+			}else {
+				mv.addObject("errorMessage", "Invalid user.");
+				mv.setViewName("login");
+			}
 
 		} else {
 

@@ -57,7 +57,7 @@ public class uploadChecker extends HttpServlet {
         
 	        try {
 	            // connects to the database
-	            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+	            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 	            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/teamecommercedb", "root", "root");
 	 
 	            // constructs SQL statement
