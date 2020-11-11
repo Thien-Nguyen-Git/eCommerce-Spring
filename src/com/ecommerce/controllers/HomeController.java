@@ -8,11 +8,20 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 	
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public ModelAndView displayHome() {
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	public ModelAndView displayAdminHome() {
 		ModelAndView mv = new ModelAndView();
 		
-		mv.setViewName("home");
+		mv.setViewName("adminHome");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ModelAndView displayCustomerHome() {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("customerHome");
 		
 		return mv;
 	}
