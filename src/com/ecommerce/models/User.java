@@ -1,6 +1,7 @@
-package com.ecommerce.model;
+package com.ecommerce.models;
 
 public class User {
+	
 	private int uid;
 	private String name;
 	private String email;
@@ -12,19 +13,15 @@ public class User {
 	private String apt;
 	private String city;
 	private String state;
-	private String zip;
+	private int zip;
 	
 	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-
 	
-
-	public User(int uid, String name, String email, String phone, String username, String password, String role,
-			String street_name, String apt, String city, String state, String zip) {
+	public User(String name, String email, String phone, String username, String password, String role,
+			String street_name, String apt, String city, String state, int zip) {
 		super();
-		this.uid = uid;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
@@ -37,8 +34,6 @@ public class User {
 		this.state = state;
 		this.zip = zip;
 	}
-
-
 
 	public int getUid() {
 		return uid;
@@ -70,6 +65,14 @@ public class User {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -112,49 +115,22 @@ public class User {
 		this.city = city;
 	}
 
-	public String getZip() {
-		return zip;
-	}
-
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-	
-
-	public String getUsername() {
-		return username;
-	}
-
-
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-
-
 	public String getState() {
 		return state;
 	}
-
-
 
 	public void setState(String state) {
 		this.state = state;
 	}
 
-
-
-	@Override
-	public String toString() {
-		return "User [uid=" + uid + ", name=" + name + ", email=" + email + ", phone=" + phone + ", username="
-				+ username + ", password=" + password + ", role=" + role + ", street_name=" + street_name + ", apt="
-				+ apt + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
+	public int getZip() {
+		return zip;
 	}
 
+	public void setZip(int zip) {
+		this.zip = zip;
+	}
+	
+	
 
-
-	
-	
-	
 }

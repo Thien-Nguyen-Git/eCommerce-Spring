@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet"
+	<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
@@ -122,6 +122,6 @@
 	</div>
 	<br>
 	<footer class="p-3 mb-2 bg-dark text-white text-center">
-		Copyright © Eccomerce App 2020 </footer>
+		Copyright ï¿½ Eccomerce App 2020 </footer>
 </body>
 </html>
