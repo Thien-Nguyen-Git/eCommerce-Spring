@@ -87,7 +87,7 @@ User u = util.returnUser(x);
 								if(util.updateUser(a, b, c, d, e,f,g,h,i,j,k,x)){
 									// String redirectURL = "http://localhost:8080/EcommerceTeamProject/updateCustomer.html";
 									//CrunchifySpringMVCTutorial
-									String redirectURL = "http://localhost:8080/eCommerceProject/customerManagement";
+									String redirectURL = "http://localhost:8080/eCommerceProject/admin/customerManagement";
 									 response.sendRedirect(redirectURL);	
 									
 								}
@@ -108,6 +108,6 @@ User u = util.returnUser(x);
 					<br> <input name="update" type="submit"
 						value="Update">
 </form>
-<br> <a class="btn btn-primary text-center" href="customerManagement">Back</a>
+<br> <a class="btn btn-primary text-center" href="admin/customerManagement">Back</a>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <title>Add</title>
 </head>
 <body>
-<h1>Add new User/Admin</h1>
+<h1>Add a New User/Admin</h1>
 	<form class="border" method="post">
 					<label for="name">Name:</label> 
 					<br>

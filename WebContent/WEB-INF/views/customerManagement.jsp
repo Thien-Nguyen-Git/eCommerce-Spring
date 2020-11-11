@@ -35,7 +35,7 @@ UtilCls util = new UtilCls();
 			 if (request.getParameter(Integer.toString(userList.get(i).getUid())) != null){
 				 util.test(request.getParameter(Integer.toString(userList.get(i).getUid())));
 				 util.delete(request.getParameter(Integer.toString(userList.get(i).getUid())));
-				 String redirectURL ="http://localhost:8080/eCommerceProject/customerManagement";
+				 String redirectURL ="http://localhost:8080/eCommerceProject/admin/customerManagement";
 				 response.sendRedirect(redirectURL);
 			 }
 			 
@@ -48,7 +48,7 @@ UtilCls util = new UtilCls();
 				 session.setAttribute("idToChange", userList.get(i).getUid());
 				// session.setAttribute("updateSuccess", "null");
 				 //util.delete(request.getParameter(Integer.toString(userList.get(i).getUid())));
-				 String redirectURL = "http://localhost:8080/eCommerceProject/updateCustomer";
+				 String redirectURL = "http://localhost:8080/eCommerceProject/admin/updateCustomer";
 				 response.sendRedirect(redirectURL);
 			 }
 
