@@ -6,19 +6,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ProductController {
-	@RequestMapping("/productManagement")
+	@RequestMapping("admin/productManagement")
 	public ModelAndView products() {
 	
 		return new ModelAndView("productManagement");
 	}
 	
-	@RequestMapping("/addProduct")
+	@RequestMapping("admin/addProduct")
 	public ModelAndView addProd() {
 	
 		return new ModelAndView("addProduct");
 	}
 	
-	@RequestMapping("/products")
+	@RequestMapping("admin/products")
 	public ModelAndView prodList() {
 	
 		return new ModelAndView("productList");

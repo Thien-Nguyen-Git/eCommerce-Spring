@@ -9,11 +9,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add New Product</title>
 </head>
 <body>
 <form action="uploadChecker" method="post" enctype='multipart/form-data'>
-					<label for="name">Name:</label> 
+					<label for="name">Product Name:</label> 
 					<br>
 					<input type="text" id="name" name="name" required>
 					<br><br> 

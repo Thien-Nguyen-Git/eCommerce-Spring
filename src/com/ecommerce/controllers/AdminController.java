@@ -6,19 +6,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AdminController {
-	@RequestMapping("/customerManagement")
+	@RequestMapping("admin/customerManagement")
 	public ModelAndView users() {
 	
 		return new ModelAndView("customerManagement");
 	}
 	
-	@RequestMapping("/updateCustomer")
+	@RequestMapping("admin/updateCustomer")
 	public ModelAndView updateViaAdmin() {
 	
 		return new ModelAndView("updateCustomer");
 	}
 	
-	@RequestMapping("/adminAddUser")
+	@RequestMapping("admin/adminAddUser")
 	public ModelAndView addViaAdmin() {
 	
 		return new ModelAndView("adminAddUser");

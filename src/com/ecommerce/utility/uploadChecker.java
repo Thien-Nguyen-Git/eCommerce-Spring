@@ -18,7 +18,7 @@ import javax.servlet.http.Part;
 /**
  * Servlet implementation class uploadChecker
  */
-@WebServlet("/uploadChecker")
+@WebServlet("/admin/uploadChecker")
 @MultipartConfig(maxFileSize = 16177215)
 public class uploadChecker extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -85,7 +85,7 @@ public class uploadChecker extends HttpServlet {
 	        }
 	        finally {
 	        	 request.setAttribute("Message", message);
-	        	 getServletContext().getRequestDispatcher("/productManagement").forward(request, response);
+	        	 getServletContext().getRequestDispatcher("/admin/productManagement").forward(request, response);
 	        }
 	    }
 	
