@@ -58,7 +58,7 @@ public class uploadChecker extends HttpServlet {
 	        try {
 	            // connects to the database
 	            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-	            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/teamecommercedb", "root", "root");
+	            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/teamecommercedb", "root", "TakeoRyuuken0!");
 	 
 	            // constructs SQL statement
 	            String sql = "INSERT INTO product (product_name, description,category, price, stock_amt,picture) values (?, ?, ?, ?, ?,?)";

@@ -32,7 +32,7 @@ public class WebMvcConfig {
 		datasource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		datasource.setUrl("jdbc:mysql://localhost:3306/teamecommercedb");
 		datasource.setUsername("root");
-		datasource.setPassword("rootroot");
+		datasource.setPassword("TakeoRyuuken0!");
 
 		return datasource;
 

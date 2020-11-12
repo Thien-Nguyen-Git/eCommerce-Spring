@@ -4,25 +4,57 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Update User</title>
-</head>
-<body>
-Update User Information:
-<%
-UtilCls util = new UtilCls();
-//System.out.println(session.getAttribute("idToChange"));
-int x = (int)session.getAttribute("idToChange");
-//System.out.println(util.returnUser(x));
-User u = util.returnUser(x);
+	<head>
+	
+	<meta charset="ISO-8859-1">
+	<title>Update User</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+	</head>
+	
+	<body>
+	
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">Sword Shop Online</a>
+				</div>
 
-%>
-<form>
-<label for="id">ID:</label> 
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="product.html">Products</a></li>
+					<!-- <li><a href="#">About Us</a></li>
+					<li><a href="#">Contact Us</a></li> -->
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+					<li><a href="admin.html"><span class="glyphicon glyphicon-king"></span> Admin</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		Update User Information:
+		<%
+		UtilCls util = new UtilCls();
+		//System.out.println(session.getAttribute("idToChange"));
+		int x = (int)session.getAttribute("idToChange");
+		//System.out.println(util.returnUser(x));
+		User u = util.returnUser(x);
+		
+		%>
+		<form>
+		<label for="id">ID:</label> 
 					<br>
 					<input type="text" id="id" name="id" value=<%=u.getUid()%> disabled required>
-<br> <br>
+					<br> <br>
 					<label for="name">Name:</label> 
 					<br>
 					<input type="text" id="name" name="name" value=<%=u.getName()%> required>
@@ -107,7 +139,7 @@ User u = util.returnUser(x);
 					%>
 					<br> <input name="update" type="submit"
 						value="Update">
-</form>
-<br> <a class="btn btn-primary text-center" href="admin/customerManagement">Back</a>
-</body>
+		</form>
+		<br> <a class="btn btn-primary text-center" href="admin/customerManagement">Back</a>
+	</body>
 </html>
