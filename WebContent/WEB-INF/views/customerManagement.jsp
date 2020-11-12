@@ -20,6 +20,44 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	
+		<style>	
+			.customer-container {
+                padding: 50px;
+            }
+            
+            .table-row {
+            	background-color: green;
+            	color: white;
+            	text-align: center;
+            }
+            
+            .customer-table {
+            	width: 100%;
+            	text-align: center;
+            }
+            
+            th {
+            	text-align: center;
+            }
+
+            /* button to add user */
+            .btn {
+                border: none;
+                background-color: inherit;
+                padding: 14px 28px;
+                font-size: 16px;
+                cursor: pointer;
+                display: inline-block;
+            }
+            .info {
+                color: dodgerblue;
+            }
+            .info:hover {
+                background: #2196F3;
+                color: white;
+            }
+		</style>
+	
 	</head>
 	
 	<body>
@@ -46,13 +84,22 @@
 			</div>
 		</nav>
 		
+		<div class="customer-container" style="text-align: left">
+		
 		<h1>Customer Management Page</h1>
 		<p>This is the customer management page</p>
 		
 		<form method="post" >
 		
-			<table border=1>
-			<tr><th>Name</th><th>Email</th><th>Phone</th><th>Username</th><th>Edit</th><th>Delete</th></tr>
+			<table border=1 class="customer-table">
+				<tr class="table-row">
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Username</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
 				<%
 					List<User> userList = util.retLogins();
 					for (int i=0;i<userList.size();i++) {
@@ -89,10 +136,19 @@
 				}
 				
 				%>
-			</table>
+				</table>
 		
-		</form>
+			</form>
+			
+			<br>
 		
-		<br> <a href="adminAddUser"><button>Add User</button></a>
+			<a href="adminAddUser">
+				<button class="btn info">
+					Add User
+				</button>
+			</a>
+		
+		</div>
+
 	</body>
 </html>
