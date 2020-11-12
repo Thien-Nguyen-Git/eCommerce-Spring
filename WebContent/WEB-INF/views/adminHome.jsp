@@ -13,6 +13,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	
+		<style>	
+			.admin-container {
+                padding: 50px;
+            }
+		</style>
+	
 	</head>
 	
 	<body>
@@ -25,7 +31,7 @@
 
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="product.html">Products</a></li>
+					<li><a href="admin/products">Products</a></li>
 					<!-- <li><a href="#">About Us</a></li>
 					<li><a href="#">Contact Us</a></li> -->
 				</ul>
@@ -33,18 +39,27 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+					<li><a href="admin/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 					<li><a href="admin.html"><span class="glyphicon glyphicon-king"></span> Admin</a></li>
 				</ul>
 			</div>
 		</nav>
 		
-		${message}
-		<br>
-		<a href="admin/products">Product List</a>
-		<br>
-		<a href="admin/customerManagement">Customer Management</a>
-		<br>
-		<a href="admin/productManagement">Product Management</a>
+		<div class="admin-container" style="text-align: left">
+		
+			<h1>Administrator Page</h1>
+			
+			<hr>
+		
+			<h2>${message}</h2>
+			
+			<br>
+			<a href="admin/products">Product List</a>
+			<br>
+			<a href="admin/customerManagement">Customer Management</a>
+			<br>
+			<a href="admin/productManagement">Product Management</a>
+		
+		</div>
 	</body>
 </html>

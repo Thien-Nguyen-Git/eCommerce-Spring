@@ -5,6 +5,8 @@
 	<head>
 	
 	<meta charset="ISO-8859-1">
+	<style><%@include file="/WEB-INF/css/login.css"%></style>
+
 	<title>Register</title>
 	
 	<meta charset="utf-8">
@@ -12,6 +14,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+		<style>	
+			.register-container {
+				padding: 50px;
+			}
+		</style>
 	
 	</head>
 	
@@ -38,40 +46,43 @@
 				</ul>
 			</div>
 		</nav>
+
+		<div class="register-container" style="align: center">
 		
-	<form action="register" method="post">
-			<div class="error">${errorMessage}</div>
-			<br>
-			<table style="text-align: center">
-				<tr>
-					<td>Name </td>
-					<td><input type="text" name="name" required></td>
-				</tr>
-				<tr>
-					<td>Username </td>
-					<td><input type="text" name="username" required/></td>
-				</tr>
-				<tr>
-					<td>Password </td>
-					<td><input type="password" name="password" required 
-					pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-					title="Must contain at least one number, one uppercase, one lowercase letter, and at least 8 or more characters"/></td>
-				</tr>
-				<tr>
-					<td>Email </td>
-					<td><input type="text" name="email" required 
-					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="Register"/></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><p>Already have an account?</p><a href="login">Login here</a></td>
-				</tr>
-			</table>
-		</form>
+			<form action="register" method="post">
+
+				<div class="error">${errorMessage}</div>
+				<br>
+				<table style="text-align: center">
+					<tr>
+						<td><input type="text" name="name" placeholder="name" required></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="username" placeholder="username" required/></td>
+					</tr>
+					<tr>
+						<td><input type="password" name="password" placeholder="password" required 
+						pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+						title="Must contain at least one number, one uppercase, one lowercase letter, and at least 8 or more characters"/></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="email" placeholder="email" required 
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="Register"/></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><p>Already have an account?</p><a href="login">Login here</a></td>
+					</tr>
+				</table>
+
+			</form>
+
+		</div>
+
 	</body>
 	
 </html>

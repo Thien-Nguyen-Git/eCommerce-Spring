@@ -14,6 +14,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+		<style>	
+			.login-container {
+				padding: 50px;
+			}
+		</style>
 	
 	</head>
 	
@@ -40,27 +46,32 @@
 				</ul>
 			</div>
 		</nav>
-		
-		<form action="login" method="post">
 
-			<div class="error">${errorMessage}</div>
-			<div class="message">${message}</div>
-			<br>
-			
-			<table style="text-align: center">
-				<tr>
-					<td><input type="text" name="username" placeholder="username" required/></td>
-				</tr>
-				<tr>
-					<td><input type="password" name="password" placeholder="password" required/></td>
-				</tr>
-				<tr>
-					<td><input type="submit" value="LOGIN"/></td>
-				</tr>
-				<tr>
-					<td><p>Don't have an account? </p><a href="register">Register here</a></td>
-				</tr>
-			</table>
-		</form>
+		<div class="login-container" style="align: center">
+		
+			<form action="login" method="post">
+
+				<div class="error">${errorMessage}</div>
+				<div class="message">${message}</div>
+				<br>
+				
+				<table style="text-align: center">
+					<tr>
+						<td><input type="text" name="username" placeholder="username" required/></td>
+					</tr>
+					<tr>
+						<td><input type="password" name="password" placeholder="password" required/></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="LOGIN"/></td>
+					</tr>
+					<tr>
+						<td><p>Don't have an account? </p><a href="register">Register here</a></td>
+					</tr>
+				</table>
+			</form>
+
+		</div>
+
 	</body>
 </html>
