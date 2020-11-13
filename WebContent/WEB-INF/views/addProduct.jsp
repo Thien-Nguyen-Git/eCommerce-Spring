@@ -80,7 +80,7 @@
 					<li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					<li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-					<li><a href="admin.html"><span class="glyphicon glyphicon-king"></span> Admin</a></li>
+					<li><a href="admin/products"><span class="glyphicon glyphicon-king"></span> Admin</a></li>
 				</ul>
 			</div>
 		</nav>

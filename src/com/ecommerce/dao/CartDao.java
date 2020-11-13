@@ -6,8 +6,11 @@ import com.ecommerce.models.Cart;
 
 public interface CartDao {
 	
-	public Cart getCart();
-	public int updateCartTotal(double price);
-	public int updateCartStatus(boolean paid, LocalDateTime date);
+	public Cart getCart(int uid);
+	public int createCart(int uid);
+	public int updateCartTotal(int cart_id, double price);
+	public int updateCartStatus(int cart_id, LocalDateTime date);
+	public LocalDateTime getCartDate(int cart_id);
+	public Cart getCompleteCart(int uid, int cart_id);
 
 }

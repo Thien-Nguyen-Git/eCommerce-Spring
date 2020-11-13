@@ -98,7 +98,7 @@
 
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="product.html">Products</a></li>
+					<li><a href="admin/products">Products</a></li>
 					<!-- <li><a href="#">About Us</a></li>
 					<li><a href="#">Contact Us</a></li> -->
 				</ul>
@@ -107,49 +107,63 @@
 					<li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					<li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-					<li><a href="admin.html"><span class="glyphicon glyphicon-king"></span> Admin</a></li>
+					<li><a href="admin"><span class="glyphicon glyphicon-king"></span> Admin</a></li>
 				</ul>
 			</div>
 		</nav>
 		
 		<div class="product-container" style="text-align: left">
 		
-		<h1>Product Inventory Page</h1>
-		<p>This is the product inventory page</p>
+			<h1>Product Inventory Page</h1>
+			<p>This is the product inventory page</p>
+
+			<form>
 		
-		<table BORDER="1" id="products">
-		    <TR>
-			    <TH>Product Id</TH>
-			    <TH>Product Name</TH>
-			    <TH>Description</TH>
-			    <TH>Price</TH>
-			  	<TH>Picture</TH>
-		    </TR>
-		    
-		   
-			<%
-			UtilCls util = new UtilCls();
-			List<Product> prodList =  util.retProducts();
-			
-			for (int i=0;i<prodList.size();i++) {
-				out.println(" <tr>   <td>"+prodList.get(i).getPid()+"</td><td>"+prodList.get(i).getProduct_name()+"</td><td>"+prodList.get(i).getDescription()+"<td>"+prodList.get(i).getPrice()+"</td><td>");
+			<table BORDER="1" id="products">
+				<TR>
+					<TH>Product Id</TH>
+					<TH>Product Name</TH>
+					<TH>Description</TH>
+					<TH>Price</TH>
+					<TH>Picture</TH>
+					<TH>Edit</TH>
+				</TR>
 				
-			%>
-			  <img width="200" height="200" src="data:image/jpeg;base64,<%= prodList.get(i).getPicture() %>" />
-			  </td>
-			  <%
-			 // out.println("<td><button type='submit' name="+prodList.get(i).getPid()+" value="+prodList.get(i).getPid()+">Delete</td>");
-			  %>
-			  </tr>
 			
-			  <%} %>
+				<%
+				UtilCls util = new UtilCls();
+				List<Product> prodList =  util.retProducts();
+				
+				for (int i=0;i<prodList.size();i++) {
+					out.println(" <tr>   <td>"+prodList.get(i).getPid()+"</td><td>"+prodList.get(i).getProduct_name()+"</td><td>"+prodList.get(i).getDescription()+"<td>"+prodList.get(i).getPrice()+"</td><td>");
+					
+				%>
+				<img width="200" height="200" src="data:image/jpeg;base64,<%= prodList.get(i).getPicture() %>" />
+				</td>
+				<%
+				// out.println("<td><button type='submit' name="+prodList.get(i).getPid()+" value="+prodList.get(i).getPid()+">Delete</td>");
+				%>
+				</tr>
+				
+				<%} %>
 			</table>
+
+			</form>
+
+			<%
+				//checking if edit button is clicked
+				for (int i=0;i<prodList.size();i++) {
+					if (request.getParameter(Integer.toString(prodList.get(i).getPid())) != null){
+						util.test(request.getParameter(Integer.toString(prodList.get(i).getPid())));
+						session.setAttribute("pidToChange", prodList.get(i).getPid());
+						String redirectURL = "http://localhost:8080/eCommerceProject/admin/updateProduct";
+						response.sendRedirect(redirectURL);
+					}
+				}
+			%>
 			
-			<a href="addProduct">
-		    	<button class="btn info">
-		    		Add Product
-		    	</button>
-	    	</a>
+			<a href="addProduct"><button class="btn info">Add Product</button></a>
+			<a href="delProduct"><button class="btn info">Delete Product</button></a>
 		
 		</div>
 		
