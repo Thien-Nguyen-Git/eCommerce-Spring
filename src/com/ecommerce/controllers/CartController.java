@@ -47,22 +47,27 @@ public class CartController {
 		List<CartItem> cartList = cartItem.getWholeCart(userCart.getCart_id());
 		List<Product> cartItems = new ArrayList<>();
 		
+		double total = 0.00;
+		
 		for(CartItem ci : cartList) {
 			int pid = ci.getPid();
 			cartItems.add(productDao.getProduct(pid));
 		}
 		
-		double total = 0.00;
-		
 		for(Product p : cartItems) {
 			total += p.getPrice();
 		}
 		
-		cartDao.updateCartTotal(userCart.getCart_id(), total);
+		if(cartItems.size() == 0) {
+			mv.setViewName("emptyCart");
+		}else {
+			mv.addObject("cart_id", userCart.getCart_id());
+			mv.addObject("cartItems", cartItems);
+			mv.addObject("total", total);
+			mv.setViewName("cart");
+		}
 		
-		mv.addObject("cartItems", cartItems);
-		mv.addObject("total", total);
-		mv.setViewName("cart");
+		cartDao.updateCartTotal(userCart.getCart_id(), total);
 		
 		return mv;
 	}
@@ -70,18 +75,20 @@ public class CartController {
 	@RequestMapping(value = "/cart/delete", method = RequestMethod.POST)
 	public ModelAndView deleteCartItem(@RequestParam("pid") int pid, RedirectAttributes redirAtt) {
 		
+		ModelAndView mv = new ModelAndView();
+		
 		int deletedItem = cartItem.deleteProduct(pid);
 		
 		if (deletedItem != 0) {
 
-			redirAtt.addFlashAttribute("message", "Item removed");
+			redirAtt.addFlashAttribute("cartMessage", "Item removed");
 
 		} else {
 
-			redirAtt.addFlashAttribute("message", "Failed to remove the item");
+			redirAtt.addFlashAttribute("cartMessage", "Failed to remove the item");
 		}
 		
-		mv.setViewName("cart");
+		mv.setViewName("redirect:/shop");
 		
 		return mv;
 	}
@@ -105,9 +112,41 @@ public class CartController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/cart", method = RequestMethod.PATCH)
-	public void completeCart(@RequestParam("cart_id") int cart_id) {
+	@RequestMapping(value = "/receipt", method = RequestMethod.POST)
+	public ModelAndView completeCart(@RequestParam("cart_id") int cart_id) {
 		cartDao.updateCartStatus(cart_id, LocalDateTime.now());
-	}
 
+		mv.setViewName("receipt");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value = "/receipt", method = RequestMethod.GET)
+	public ModelAndView completeOrder(@RequestParam("uid") int uid, @RequestParam("cart_id") int cart_id) {
+		
+		Cart userCart = cartDao.getCart(uid);
+		
+		List<CartItem> cartList = cartItem.getWholeCart(userCart.getCart_id());
+		List<Product> cartItems = new ArrayList<>();
+		
+		double total = 0.00;
+		
+		for(CartItem ci : cartList) {
+			int pid = ci.getPid();
+			cartItems.add(productDao.getProduct(pid));
+		}
+		
+		for(Product p : cartItems) {
+			total += p.getPrice();
+		}
+		
+		LocalDateTime date = cartDao.getCartDate(cart_id);
+		System.out.println(date);
+		
+		mv.addObject("cartItems", cartItems);
+		mv.addObject("total", total);
+		mv.addObject("date", date);
+		
+		return new ModelAndView("receipt");
+	}
 }
