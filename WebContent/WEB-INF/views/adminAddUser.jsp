@@ -3,6 +3,24 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<%
+//redirects to index page if you try to access page w/o logging in
+if(session.getAttribute("uname")==null){
+	response.sendRedirect("login");
+}
+
+UtilCls util = new UtilCls();
+if(session.getAttribute("uname")!=null){
+	String loggedInUser = (String)session.getAttribute("uname");
+	if(util.checkRoleSession(loggedInUser).equals("admin")){
+		
+	}
+	else{
+		response.sendRedirect("http://localhost:8080/eCommerceProject/home");
+	}
+}
+
+%>
 <head>
 <meta charset="ISO-8859-1">
 <title>Add</title>
@@ -27,7 +45,7 @@
 					 <label for="role">Role:</label> <br>
 					<input type="text" id="role" name="role" placeholder="user or admin" required><br> <br>
 					<%
-						UtilCls util = new UtilCls();
+
 					if (request.getParameter("adminAdd") != null) {
 						String a, b, c, d, e;
 						a = request.getParameter("name");

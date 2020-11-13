@@ -63,6 +63,22 @@ public class UserDaoImpl implements UserDao{
 			return null;
 		}
 	}
+	
+	@SuppressWarnings("deprecation")
+	public String getUserUsername(User user) {
+		String user_role_sql = "SELECT username FROM user WHERE username = ?";
+		
+		try {
+			
+			String username = jdbcTemplate.queryForObject(user_role_sql, new Object[] {user.getUsername()} , String.class);
+			
+			return username;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 
 }

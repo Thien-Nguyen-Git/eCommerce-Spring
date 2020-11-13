@@ -7,5 +7,6 @@ public interface UserDao {
 	public String loginUser(User user);
 	public int registerUser(User user);
 	public String getUserRole(User user);
+	public String getUserUsername(User user);
 
 }

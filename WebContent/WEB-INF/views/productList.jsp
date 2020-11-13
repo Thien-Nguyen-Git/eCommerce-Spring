@@ -54,7 +54,7 @@ for (int i=0;i<prodList.size();i++) {
 	out.println(" <tr>   <td>"+prodList.get(i).getPid()+"</td><td>"+prodList.get(i).getProduct_name()+"</td><td>"+prodList.get(i).getDescription()+"<td>"+prodList.get(i).getPrice()+"</td><td>");
 	
 %>
-  <img width="200" height="200" alt="No Picture Provided" src="data:image/jpeg;base64,<%= prodList.get(i).getPicture() %>" />
+  <img width="150" height="150" alt="No Picture Provided" src="data:image/jpeg;base64,<%= prodList.get(i).getPicture() %>" />
   </td>
   </tr>
 

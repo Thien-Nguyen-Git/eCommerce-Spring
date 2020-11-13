@@ -6,8 +6,25 @@
 <!DOCTYPE html>
 <html>
 <%
-session.setAttribute("idToChange", null);
+//redirects to index page if you try to access page w/o logging in
+if(session.getAttribute("uname")==null){
+	response.sendRedirect("login");
+}
+
 UtilCls util = new UtilCls();
+if(session.getAttribute("uname")!=null){
+	String loggedInUser = (String)session.getAttribute("uname");
+	if(util.checkRoleSession(loggedInUser).equals("admin")){
+		
+	}
+	else{
+		response.sendRedirect("http://localhost:8080/eCommerceProject/home");
+	}
+}
+
+%>
+<%
+session.setAttribute("idToChange", null);
 %>
 <head>
 <meta charset="ISO-8859-1">

@@ -40,15 +40,17 @@ public class LoginController {
 		if (name != null) {
 			
 			String role = userDao.getUserRole(user);
-			
+			String uname = userDao.getUserUsername(user);
 			if (role.equals("admin")) {
 				
 				redirAtt.addFlashAttribute("message", "Welcome " + name);
+				mv.addObject("uname", uname);
 				mv.setViewName("redirect:/admin");
 				
 			}else if (role.equals("user")) {
 				
 				redirAtt.addFlashAttribute("message", "Welcome " + name);
+				mv.addObject("uname", uname);
 				mv.setViewName("redirect:/home");
 				
 			}else {

@@ -29,4 +29,10 @@ public class ProductController {
 	
 		return new ModelAndView("delProduct");
 	}
+	
+	@RequestMapping("admin/updateProduct")
+	public ModelAndView upProd() {
+	
+		return new ModelAndView("updateProduct");
+	}
 }

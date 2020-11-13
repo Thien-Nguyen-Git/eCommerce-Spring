@@ -4,6 +4,24 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<%
+//redirects to index page if you try to access page w/o logging in
+if(session.getAttribute("uname")==null){
+	response.sendRedirect("login");
+}
+
+UtilCls util = new UtilCls();
+if(session.getAttribute("uname")!=null){
+	String loggedInUser = (String)session.getAttribute("uname");
+	if(util.checkRoleSession(loggedInUser).equals("admin")){
+		
+	}
+	else{
+		response.sendRedirect("http://localhost:8080/eCommerceProject/home");
+	}
+}
+
+%>
 <head>
 <meta charset="ISO-8859-1">
 <title>Update User</title>
@@ -11,7 +29,7 @@
 <body>
 Update User Information:
 <%
-UtilCls util = new UtilCls();
+
 //System.out.println(session.getAttribute("idToChange"));
 int x = (int)session.getAttribute("idToChange");
 //System.out.println(util.returnUser(x));
@@ -108,6 +126,6 @@ User u = util.returnUser(x);
 					<br> <input name="update" type="submit"
 						value="Update">
 </form>
-<br> <a class="btn btn-primary text-center" href="admin/customerManagement">Back</a>
+<br> <a class="btn btn-primary text-center" href="customerManagement">Back</a>
 </body>
 </html>

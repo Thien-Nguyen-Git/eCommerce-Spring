@@ -8,6 +8,9 @@
 <title>Login</title>
 </head>
 <body>
+<%
+session.setAttribute("uname", null);
+%>
 	<form action="login" method="post">
 
 			<div class="error">${errorMessage}</div>
