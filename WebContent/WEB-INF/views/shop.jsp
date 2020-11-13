@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h1>${ message }</h1>
+	<p>${ cartMessage }</p>
 		<table>
 	  		<c:forEach items="${productList}" var="item">
 	    	<tr>

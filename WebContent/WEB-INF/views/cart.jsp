@@ -35,5 +35,11 @@
 		   		<td>${total }</td>
 		   	</tr>
 		</table>
+		
+		<form action="receipt" method="post">
+			<input type="hidden" name="uid" value="<c:out value="${sessionScope.currentUser.uid}"/>" />
+			<input type="hidden" name="cart_id" value="${cart_id}"/>
+		    <button type="submit">Purchase</button>
+		</form>
 </body>
 </html>

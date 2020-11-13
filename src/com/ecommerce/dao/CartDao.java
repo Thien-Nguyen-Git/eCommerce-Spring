@@ -10,5 +10,7 @@ public interface CartDao {
 	public int createCart(int uid);
 	public int updateCartTotal(int cart_id, double price);
 	public int updateCartStatus(int cart_id, LocalDateTime date);
+	public LocalDateTime getCartDate(int cart_id);
+	public Cart getCompleteCart(int uid, int cart_id);
 
 }

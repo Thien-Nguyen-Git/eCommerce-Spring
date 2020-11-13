@@ -90,6 +90,48 @@ public class CartDaoImpl implements CartDao{
 			return 0;
 		}
 	}
+	
+	@SuppressWarnings("deprecation")
+	@Override
+	public Cart getCompleteCart(int uid, int cart_id) {
+		
+		String get_cart_sql = "SELECT * FROM cart WHERE uid = ? AND cart_id = ? AND paid = true";
+		
+		try {
+			
+			Cart currentCart = jdbcTemplate.queryForObject(get_cart_sql, new Object[] {uid}, (rs, rowNum) ->
+            new Cart(
+                    rs.getInt("cart_id"),
+                    rs.getInt("uid"),
+                    rs.getBoolean("paid"),
+                    rs.getDouble("total"),
+                    rs.getObject("date", LocalDateTime.class)
+            ));
+			
+			return currentCart;
+			
+		} catch (Exception e) {
+			return null;
+		}
+		
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public LocalDateTime getCartDate(int cart_id) {
+
+		String get_date_sql = "SELECT date FROM cart WHERE cart_id = ?";
+		
+		try {
+			
+			LocalDateTime date = jdbcTemplate.queryForObject(get_date_sql, new Object[] {cart_id}, LocalDateTime.class);
+			
+			return date;
+			
+		} catch (Exception e) {
+			return null;
+		}
+	}
 
 
 }
