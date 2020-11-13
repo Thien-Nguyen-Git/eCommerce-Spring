@@ -1,3 +1,4 @@
+
 package com.ecommerce.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,21 +36,22 @@ public class LoginController {
 		user.setUsername(username);
 		user.setPassword(password);
 
-		String name = userDao.loginUser(user);
+		User currentUser = userDao.loginUser(user);
 
-		if (name != null) {
+		if (currentUser != null) {
 			
-			String role = userDao.getUserRole(user);
+			String role = currentUser.getRole();
 			
 			if (role.equals("admin")) {
 				
-				redirAtt.addFlashAttribute("message", "Welcome " + name);
+				redirAtt.addFlashAttribute("message", "Welcome " + currentUser.getName());
 				mv.setViewName("redirect:/admin");
 				
 			}else if (role.equals("user")) {
 				
-				redirAtt.addFlashAttribute("message", "Welcome " + name);
-				mv.setViewName("redirect:/home");
+				redirAtt.addFlashAttribute("message", "Welcome " + currentUser.getName());
+				redirAtt.addFlashAttribute("currentUser", currentUser);
+				mv.setViewName("redirect:/shop");
 				
 			}else {
 				mv.addObject("errorMessage", "Invalid user.");

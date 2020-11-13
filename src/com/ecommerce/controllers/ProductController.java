@@ -23,4 +23,10 @@ public class ProductController {
 	
 		return new ModelAndView("productList");
 	}
+	
+	@RequestMapping("admin/delProduct")
+	public ModelAndView delProd() {
+	
+		return new ModelAndView("delProduct");
+	}
 }
