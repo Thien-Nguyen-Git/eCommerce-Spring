@@ -2,9 +2,12 @@ package com.ecommerce.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -12,10 +15,16 @@ import com.ecommerce.dao.UserDao;
 import com.ecommerce.models.User;
 
 @Controller
+@SessionAttributes("currentUser")
 public class LoginController {
 	
 	@Autowired
 	private UserDao userDao;
+	
+	@ModelAttribute("currentUser")
+	 public User user() {
+	  return new User();
+	 }
 	
 	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
 	public ModelAndView displayLogin() {
@@ -27,7 +36,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView userLogin(@RequestParam("username") String username, @RequestParam("password") String password, RedirectAttributes redirAtt) {
+	public ModelAndView userLogin(@RequestParam("username") String username, @RequestParam("password") String password, Model model, @ModelAttribute("currentUser") User currentUser, RedirectAttributes redirAtt) {
 
 		ModelAndView mv = new ModelAndView();
 
@@ -35,7 +44,7 @@ public class LoginController {
 		user.setUsername(username);
 		user.setPassword(password);
 
-		User currentUser = userDao.loginUser(user);
+		currentUser = userDao.loginUser(user);
 
 		if (currentUser != null) {
 			
@@ -49,7 +58,7 @@ public class LoginController {
 			}else if (role.equals("user")) {
 				
 				redirAtt.addFlashAttribute("message", "Welcome " + currentUser.getName());
-				redirAtt.addFlashAttribute("currentUser", currentUser);
+				model.addAttribute("currentUser", currentUser);
 				mv.setViewName("redirect:/shop");
 				
 			}else {

@@ -7,6 +7,12 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.ecommerce.dao.CartDao;
+import com.ecommerce.dao.CartDaoImpl;
+import com.ecommerce.dao.CartItemDao;
+import com.ecommerce.dao.CartItemDaoImpl;
+import com.ecommerce.dao.ProductDao;
+import com.ecommerce.dao.ProductDaoImpl;
 import com.ecommerce.dao.UserDao;
 import com.ecommerce.dao.UserDaoImpl;
 
@@ -41,6 +47,21 @@ public class WebMvcConfig {
 	@Bean
 	public UserDao getUserDao() {
 		return new UserDaoImpl(getDataSource());
+	}
+	
+	@Bean
+	public ProductDao getProductDao() {
+		return new ProductDaoImpl(getDataSource());
+	}
+	
+	@Bean
+	public CartDao getCartDao() {
+		return new CartDaoImpl(getDataSource());
+	}
+	
+	@Bean
+	public CartItemDao getCartItemDao() {
+		return new CartItemDaoImpl(getDataSource());
 	}
 
 }
