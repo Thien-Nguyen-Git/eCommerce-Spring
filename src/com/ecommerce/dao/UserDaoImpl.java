@@ -14,17 +14,25 @@ public class UserDaoImpl implements UserDao{
 		jdbcTemplate = new JdbcTemplate(dataSoruce);
 	}
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation"})
 	@Override
-	public String loginUser(User user) {
+	public User loginUser(User user) {
 		
-		String login_sql = "SELECT name FROM user WHERE username=? AND password=?";
+		String login_sql = "SELECT * FROM user WHERE username=? AND password=?";
 		
 		try {
 
-			String name = jdbcTemplate.queryForObject(login_sql, new Object[] {user.getUsername(), user.getPassword() }, String.class);
+			User currentUser = jdbcTemplate.queryForObject(login_sql, new Object[] {user.getUsername(), user.getPassword() }, (rs, rowNum) ->
+            new User(
+                    rs.getInt("uid"),
+                    rs.getString("name"),
+                    rs.getString("email"),
+                    rs.getString("username"),
+                    rs.getString("password"),
+                    rs.getString("role")
+            ));
 
-			return name;
+			return currentUser;
 			
 		} catch (Exception e) {
 			return null;
@@ -45,22 +53,6 @@ public class UserDaoImpl implements UserDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 			return 0;
-		}
-	}
-	
-	@SuppressWarnings("deprecation")
-	public String getUserRole(User user) {
-		String user_role_sql = "SELECT role FROM user WHERE username = ?";
-		
-		try {
-			
-			String role = jdbcTemplate.queryForObject(user_role_sql, new Object[] {user.getUsername()} , String.class);
-			
-			return role;
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
 		}
 	}
 

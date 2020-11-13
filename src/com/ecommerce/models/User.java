@@ -19,9 +19,10 @@ public class User {
 		
 	}
 	
-	public User(String name, String email, String phone, String username, String password, String role,
+	public User(int uid, String name, String email, String phone, String username, String password, String role,
 			String street_name, String apt, String city, String state, int zip) {
 		super();
+		this.uid = uid;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
@@ -33,6 +34,16 @@ public class User {
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
+	}
+
+	public User(int uid, String name, String email, String username, String password, String role) {
+		super();
+		this.uid = uid;
+		this.name = name;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.role = role;
 	}
 
 	public int getUid() {
