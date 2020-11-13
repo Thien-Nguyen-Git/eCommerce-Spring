@@ -19,19 +19,19 @@ public class ProductController {
 	@Autowired
 	private ProductDao productDao;
 	
-	@RequestMapping("/productManagement")
+	@RequestMapping("admin/productManagement")
 	public ModelAndView products() {
 	
 		return new ModelAndView("productManagement");
 	}
 	
-	@RequestMapping("/addProduct")
+	@RequestMapping("admin/addProduct")
 	public ModelAndView addProd() {
 	
 		return new ModelAndView("addProduct");
 	}
 	
-	@RequestMapping("/products")
+	@RequestMapping("admin/products")
 	public ModelAndView prodList() {
 	
 		return new ModelAndView("productList");
@@ -61,5 +61,11 @@ public class ProductController {
 		mv.setViewName("product");
 		
 		return mv;
+	}
+	
+	@RequestMapping("admin/delProduct")
+	public ModelAndView delProd() {
+	
+		return new ModelAndView("delProduct");
 	}
 }

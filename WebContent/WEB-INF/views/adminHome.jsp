@@ -9,10 +9,10 @@
 <body>
 	${message}
 	<br>
-	<a href="products">Product List</a>
+	<a href="admin/products">Product List</a>
 	<br>
-	<a href="customerManagement">Customer Management</a>
+	<a href="admin/customerManagement">Customer Management</a>
 	<br>
-	<a href="productManagement">Product Management</a>
+	<a href="admin/productManagement">Product Management</a>
 </body>
 </html>

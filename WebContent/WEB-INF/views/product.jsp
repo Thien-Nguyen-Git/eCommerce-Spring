@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page session="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +26,14 @@
 		      	<td>${product.category}</td>
 		      	<td>${product.price}</td>
 		      	<td>
-		      		<input type="hidden" name="pid" value="${product.pid}"/><button type="submit">Add to Cart</button>
+		      		<input type="hidden" name="uid" value="<c:out value="${sessionScope.currentUser.uid}"/>" />
+		      		<input type="hidden" name="pid" value="${product.pid}"/>
+		      		<button type="submit">Add to Cart</button>
 		      	</td>
 		   	</tr>
 		</table>
 	</form>
 	
-	<a href="cart">Cart</a>
+	<a href="cart?uid=<c:out value="${sessionScope.currentUser.uid}"/>">Cart</a>
 </body>
 </html>

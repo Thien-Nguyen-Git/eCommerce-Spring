@@ -65,5 +65,6 @@ for (int i=0;i<prodList.size();i++) {
   <%} %>
     </table>
         <br> <a href="addProduct"><button>Add Product</button></a>
+        <br> <a href="delProduct"><button>Delete Product</button></a>
 </body>
 </html>

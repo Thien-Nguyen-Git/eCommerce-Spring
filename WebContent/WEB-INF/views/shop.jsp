@@ -8,7 +8,7 @@
 <title>Shop</title>
 </head>
 <body>
-
+	<h1>${ message }</h1>
 		<table>
 	  		<c:forEach items="${productList}" var="item">
 	    	<tr>
@@ -28,5 +28,6 @@
 	   		
 	  		</c:forEach>
 		</table>
+		<a href="shop/cart?uid=<c:out value="${sessionScope.currentUser.uid}"/>">Cart</a>
 </body>
 </html>
