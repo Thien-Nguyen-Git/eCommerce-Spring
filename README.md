@@ -1,13 +1,13 @@
 # Ecommerce Team Project
-Developed By:
-Noel Cheng - Backend Developer 
-Jabid Methun - Backend Developer 
-Thien Nguyen - Frontend Developer
+Developed By: <br>
+Noel Cheng - Backend Developer <br>
+Jabid Methun - Backend Developer <br>
+Thien Nguyen - Frontend Developer <br>
 
-# Description:
+## Description:
 An Ecommerce application created using Java Server Pages, Spring MVC and a MySQL Database
 
-# Getting Started:
+## Getting Started:
 Note: Eclipse IDE for Java EE Developers and MySQL Workbench is used to run this project
 - Clone repository into a folder
 - Import project from folder into Eclipse IDE
