@@ -36,7 +36,7 @@ public class ProductDaoImpl implements ProductDao{
                     rs.getString("category"),
                     rs.getDouble("price"),
                     rs.getInt("stock_amt"),
-                    Base64.getEncoder().encodeToString(rs.getBytes("picture"))
+                    "test"
             ));
 
 			return product;
