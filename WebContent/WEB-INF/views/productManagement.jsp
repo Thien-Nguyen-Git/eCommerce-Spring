@@ -1,7 +1,7 @@
 <%@page import="com.ecommerce.models.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ecommerce.utility.UtilCls"%>
-<%@ page buffer="1500kb" autoFlush="false" %>
+<%@ page buffer="3000kb" autoFlush="false" %>
 
 <%@page import="java.util.Base64"%>
 <%@page import="java.io.OutputStream"%>
