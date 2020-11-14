@@ -108,6 +108,6 @@ User u = util.returnUser(x);
 					<br> <input name="update" type="submit"
 						value="Update">
 </form>
-<br> <a class="btn btn-primary text-center" href="admin/customerManagement">Back</a>
+<br> <a class="btn btn-primary text-center" href="customerManagement">Back</a>
 </body>
 </html>
