@@ -43,7 +43,7 @@
 		*/
 			
 			.product-container {
-                padding: 50px;
+                padding: 50px 200px;
             }
             #products {
                 font-family: Arial, Helvetica, sans-serif;
@@ -93,14 +93,12 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="index.html">Sword Shop Online</a>
+					<a class="navbar-brand" href="login">Sword Shop Online</a>
 				</div>
 
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="admin/products">Products</a></li>
-					<!-- <li><a href="#">About Us</a></li>
-					<li><a href="#">Contact Us</a></li> -->
+					<li class="active"><a href="login">Home</a></li>
+					<li><a href="product">Products</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
