@@ -60,6 +60,14 @@
 			background: #2196F3;
 			color: white;
 		}
+
+		.update-customer {
+            color: forestgreen;
+        }
+        .update-customer:hover {
+            background: #228B22;
+            color: white;
+        }
 	</style>
 	
 	</head>
@@ -213,7 +221,7 @@
 
 				<br> 
 
-				<input name="update" type="submit" value="Update">
+				<input name="update" type="submit" value="Update" class="btn update-customer">
 
 			</form>
 

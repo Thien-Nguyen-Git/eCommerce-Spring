@@ -83,6 +83,14 @@
             .info:hover {
                 background: #2196F3;
                 color: white;
+			}
+			
+			.info-delete {
+                color: red;
+            }
+            .info-delete:hover {
+                background:red;
+                color: white;
             }
 		</style>
 	
@@ -160,7 +168,7 @@
 			%>
 			
 			<a href="addProduct"><button class="btn info">Add Product</button></a>
-			<a href="delProduct"><button class="btn info">Delete Product</button></a>
+			<a href="delProduct"><button class="btn info-delete">Delete Product</button></a>
 		
 		</div>
 		

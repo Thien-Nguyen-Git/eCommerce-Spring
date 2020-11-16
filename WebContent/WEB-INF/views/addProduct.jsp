@@ -19,7 +19,7 @@
 	
 		<style>	
 			.product-container {
-                padding: 50px;
+                padding: 50px 200px;
             }
             .box-input {
             	width: 100%;
@@ -56,6 +56,22 @@
             .info:hover {
                 background: #2196F3;
                 color: white;
+			}
+			
+			.add-product-submit {
+                color: forestgreen;
+            }
+            .add-product-submit:hover {
+                background: #228B22;
+                color: white;
+			}
+			
+			.add-product-cancel {
+                color: red;
+            }
+            .add-product-cancel:hover {
+                background: red;
+                color: white;
             }
 		</style>
 	
@@ -70,14 +86,14 @@
 				</div>
 
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="login">Home</a></li>
+					<li><a href="login">Home</a></li>
 					<li><a href="product">Products</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					<li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-					<li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+					<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -121,8 +137,8 @@
 				<input type="file" id="pic" name="pic" size="60" required>
 				<br><br>
 							
-				<input type="submit" value="Submit" />
-				<input type="reset" value="Cancel">
+				<input type="submit" value="Submit" class="btn add-product-submit" />
+				<input type="reset" value="Cancel" class="btn add-product-cancel" />
 			</form>
 						
 			<br> 

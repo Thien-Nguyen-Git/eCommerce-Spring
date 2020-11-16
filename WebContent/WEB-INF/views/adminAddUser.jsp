@@ -53,6 +53,14 @@
             .info:hover {
                 background: #2196F3;
                 color: white;
+			}
+			
+            .admin-add-user {
+                color: forestgreen;
+            }
+            .admin-add-user:hover {
+                background: #228B22;
+                color: white;
             }
 		</style>
 	
@@ -67,14 +75,14 @@
 				</div>
 
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="login">Home</a></li>
+					<li><a href="login">Home</a></li>
 					<li><a href="product">Products</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					<li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-					<li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+					<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -136,7 +144,7 @@
 					
 					<br> 
 					
-					<input name="adminAdd" type="submit"value="Add User">
+					<input name="adminAdd" type="submit"value="Add User" class="btn admin-add-user">
 					
 				</form>
 				

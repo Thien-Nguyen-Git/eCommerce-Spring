@@ -15,7 +15,7 @@
 	
 		<style>	
 			.admin-container {
-                padding: 50px;
+                padding: 50px 200px;
             }
 		</style>
 	
@@ -37,7 +37,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					<li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-					<li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+					<li><a href="shop/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 				</ul>
 			</div>
 		</nav>

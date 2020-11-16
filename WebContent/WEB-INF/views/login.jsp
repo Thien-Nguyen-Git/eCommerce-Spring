@@ -4,8 +4,8 @@
 <html>
 	<head>
 	
-	<meta charset="ISO-8859-1">
-	<style><%@include file="/WEB-INF/css/login.css"%></style>
+	<!-- <meta charset="ISO-8859-1">
+	<style><%@include file="/WEB-INF/css/login.css"%></style> -->
 	
 	<title>Login</title>
 	
