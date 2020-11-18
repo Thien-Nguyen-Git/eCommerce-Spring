@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.product-container {
+  padding: 50px;
+}
+.box-input {
+  width: 100%;
+}
+
+input[type='submit'],
+input[type='reset'] {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.hov {
+}
+.hov:hover {
+}
+
+/* button to go back to last page */
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+.info {
+  color: dodgerblue;
+}
+.info:hover {
+  background: #2196f3;
+  color: white;
+}
